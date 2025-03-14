@@ -45,7 +45,7 @@ module.exports.Signup= async(req, res) => {
        const token = createSecretToken(user._id);
        res.cookie("token", token, {
          withCredentials: true,
-         httpOnly: true,  
+         httpOnly: false,  
          secure: true, 
          sameSite: "None"
        });
