@@ -48,7 +48,8 @@ module.exports.Signup= async(req, res) => {
         res.cookie("token", token, {
             httpOnly: true,  
             secure: true,    
-            sameSite: "None" 
+            sameSite: "None",
+            domain: ".onrender.com"
         });
 
         return res.status(200).json({ message: "User logged in successfully", success: true });
