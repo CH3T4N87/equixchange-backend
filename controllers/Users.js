@@ -46,9 +46,9 @@ module.exports.Signup= async(req, res) => {
         const token = createSecretToken(user._id);
 
         res.cookie("token", token, {
-            httpOnly: true,   // ✅ Prevents XSS
-            secure: true,     // ✅ Required for HTTPS
-            sameSite: "None", // ✅ Allows cross-site cookies
+            httpOnly: true,  
+            secure: process.env.NODE_ENV === "production",    
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax" 
         });
 
         return res.status(200).json({ message: "User logged in successfully", success: true });
