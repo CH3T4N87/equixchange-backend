@@ -46,7 +46,8 @@ module.exports.Signup= async(req, res) => {
         httpOnly: true,
         secure: true,
         sameSite: "None",
-        domain: "equixchange.vercel.app",
+        domain: "equixchange.onrender.com",
+        partitioned: true,
       });
 
        res.status(201).json({ message: "User logged in successfully", success: true });
