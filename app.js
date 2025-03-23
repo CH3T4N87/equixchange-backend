@@ -29,7 +29,7 @@ mongoose.connect(url)
 
   
 
-  app.use(cors({ origin:['https://equixchange.vercel.app','https://dashboard-euixchange.vercel.app'], credentials: true }));
+  app.use(cors({ origin:['https://equixchange.vercel.app','https://dashboard-equixchange.vercel.app'], credentials: true }));
 
   app.use(bodyParser.json());
   app.use(cookieParser());
